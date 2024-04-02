@@ -50,7 +50,7 @@ public class App
         Fish fish = new Fish(10, 300, "Тихий океан", "замороженная", "Акула ))", "Хищная", true);
         fish.informationAboutFish();
 
-
+        int atlesoon = 0;
 
 
 
