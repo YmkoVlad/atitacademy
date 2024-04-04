@@ -1,6 +1,8 @@
 package com.academy.details;
 
-public class Battery {
+import com.academy.intface.IntarfaceBattery;
+
+public class Battery implements IntarfaceBattery {
 
     private int power;
 
@@ -11,6 +13,16 @@ public class Battery {
         this.power = power;
         this.capacity = capacity;
         this.weight = weight;
+    }
+
+    @Override
+    public void isBatteryСharging() {
+        System.out.println("Батарея на зарядке");
+    }
+
+    @Override
+    public void viewInfoBattery(String info) {
+        IntarfaceBattery.super.viewInfoBattery(info);
     }
 
     public int getPower() {

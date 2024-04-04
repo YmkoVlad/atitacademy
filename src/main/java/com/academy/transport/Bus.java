@@ -1,10 +1,12 @@
 package com.academy.transport;
 
-public class Bus extends Transport {
+import com.academy.intface.InterfaceBus;
+
+public class Bus extends Transport implements InterfaceBus {
     private int maxPlace;
     private int numberOfWheels;
-
     boolean isStart;
+
 
     public Bus(String model, int height, int weght, int maxSpeed, String color, int maxPlace, int numberOfWheels, boolean start) {
         super(model, height, weght, maxSpeed, color);
@@ -13,9 +15,6 @@ public class Bus extends Transport {
         this.isStart = start;
     }
 
-    public int getMaxPlace() {
-        return maxPlace;
-    }
 
     public boolean isStart() {
         if (isStart == false) {
@@ -26,8 +25,31 @@ public class Bus extends Transport {
     }
 
     @Override
+    public void displayInfo() {
+        System.out.println("Модель автобуса: " + super.getModel() +
+                "\nМаксимальная скорость: " + super.getMaxSpeed() +
+                "\nМаксимальное количество мест = " + getMaxPlace()+
+                "\nКоличество колёс = " + getNumberOfWheels());
+    }
+
+    @Override
+    public boolean isStartBus() {
+        return isStart = true;
+    }
+
+    @Override
+    public boolean isStopBus() {
+        return isStart = false;
+    }
+
+    @Override
     public String changeСolor(String color) {
         return color;
+    }
+
+
+    public int getMaxPlace() {
+        return maxPlace;
     }
 
     public int getNumberOfWheels() {
@@ -45,4 +67,5 @@ public class Bus extends Transport {
     public void setStart(boolean start) {
         this.isStart = start;
     }
+
 }

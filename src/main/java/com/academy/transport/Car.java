@@ -3,8 +3,9 @@ package com.academy.transport;
 import com.academy.details.Battery;
 import com.academy.details.Engine;
 import com.academy.details.Radiator;
+import com.academy.intface.InterfaceCar;
 
-public class Car extends Transport {
+public class Car extends Transport implements InterfaceCar {
 
     private String bodyType;
     private Engine engine;
@@ -35,6 +36,20 @@ public class Car extends Transport {
     public String changeСolor(String color) {
         setColor(color);
         return color;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Модель машины: " + super.getModel() +
+                "\nМаксимальная скорость: " + super.getMaxSpeed() +
+                "\nДвигатель: модель = " + engine.getModel() + ", тип двигателя = " + engine.getTypeEngine() + ", мощность = " + engine.getPower() +
+                "\nБатареия: мощность = " + battery.getPower() + ", емкость = " + battery.getCapacity() +
+                "\nРадиатор: " + radiator.getModel());
+    }
+
+    @Override
+    public void putOnCharge() {
+        System.out.println("Ваша машина на зарядке");
     }
 
     @Override
