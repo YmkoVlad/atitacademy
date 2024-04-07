@@ -1,5 +1,7 @@
 package com.academy.transport;
 
+import java.util.Objects;
+
 public abstract class Transport {
 
     private String model;
@@ -21,13 +23,6 @@ public abstract class Transport {
         this.model = model;
     }
 
-    public void viewModelTransport(){
-        System.out.println("Модель: " + model
-                + ", Высота: " + height
-                + ", Вес: " + weght
-                + ", Максимальная скорость: " + maxSpeed);
-
-    }
 
     public abstract String changeСolor(String color);
 

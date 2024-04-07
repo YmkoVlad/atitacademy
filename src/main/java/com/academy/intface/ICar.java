@@ -1,6 +1,6 @@
 package com.academy.intface;
 
-public interface InterfaceCar {
+public interface ICar {
 
     public void displayInfo();
 

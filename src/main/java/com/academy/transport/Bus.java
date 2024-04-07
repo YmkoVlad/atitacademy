@@ -1,8 +1,10 @@
 package com.academy.transport;
 
-import com.academy.intface.InterfaceBus;
+import com.academy.intface.IBus;
 
-public class Bus extends Transport implements InterfaceBus {
+import java.util.Objects;
+
+public class Bus extends Transport implements IBus {
     private int maxPlace;
     private int numberOfWheels;
     boolean isStart;
@@ -47,6 +49,28 @@ public class Bus extends Transport implements InterfaceBus {
         return color;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Bus bus = (Bus) o;
+        return maxPlace == bus.maxPlace && numberOfWheels == bus.numberOfWheels && isStart == bus.isStart;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), maxPlace, numberOfWheels, isStart);
+    }
+
+    @Override
+    public String toString() {
+        return "Bus{" +
+                "maxPlace=" + maxPlace +
+                ", numberOfWheels=" + numberOfWheels +
+                ", isStart=" + isStart +
+                '}';
+    }
 
     public int getMaxPlace() {
         return maxPlace;

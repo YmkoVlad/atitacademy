@@ -1,8 +1,8 @@
 package com.academy.details;
 
-import com.academy.intface.IntarfaceBattery;
+import com.academy.intface.IBattery;
 
-public class Battery implements IntarfaceBattery {
+public class Battery implements IBattery {
 
     private int power;
 
@@ -22,7 +22,16 @@ public class Battery implements IntarfaceBattery {
 
     @Override
     public void viewInfoBattery(String info) {
-        IntarfaceBattery.super.viewInfoBattery(info);
+        IBattery.super.viewInfoBattery(info);
+    }
+
+    @Override
+    public String toString() {
+        return "Battery{" +
+                "power=" + power +
+                ", capacity=" + capacity +
+                ", weight=" + weight +
+                '}';
     }
 
     public int getPower() {

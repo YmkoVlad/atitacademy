@@ -1,6 +1,6 @@
 package com.academy.intface;
 
-public interface IntarfaceBattery {
+public interface IBattery {
 
     String INFO = "Информация о батареи";
 

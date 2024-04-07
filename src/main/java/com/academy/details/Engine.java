@@ -1,5 +1,7 @@
 package com.academy.details;
 
+import java.util.Objects;
+
 public class Engine {
 
     private String model;
@@ -7,12 +9,51 @@ public class Engine {
     private int power;
     private int weight;
 
+
     public Engine(String model, String typeEngine, int power, int weight) {
         this.model = model;
         this.typeEngine = typeEngine;
         this.power = power;
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "model='" + model + '\'' +
+                ", typeEngine='" + typeEngine + '\'' +
+                ", power=" + power +
+                ", weight=" + weight +
+                '}';
+    }
+
+
+    //Пункт.4 Домашнее задание№7.
+    // Написал свой hashCode - по рекомендациям статьи умножил на 31
+    @Override
+    public int hashCode() {
+        int modelHashCode = model == null ? 0 : model.hashCode();
+        int typeEngineHashCode = typeEngine == null ? 0 : typeEngine.hashCode();
+        return 31 * modelHashCode + typeEngineHashCode + power + weight;
+    }
+
+    //Пункт.4 Домашнее задание№7.
+    // Написал свой equals - не учитывал вес
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Engine engine =(Engine) o;
+        return Objects.equals(model,engine.model)
+                && Objects.equals(typeEngine,engine.typeEngine)
+                && Objects.equals(power,engine.power);
+    }
+
+
 
     public String getModel() {
         return model;

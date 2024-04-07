@@ -16,6 +16,17 @@ public class Radiator {
         this.typeRadiator = typeRadiator;
     }
 
+    @Override
+    public String toString() {
+        return "Radiator{" +
+                "model='" + model + '\'' +
+                ", width=" + width +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", typeRadiator='" + typeRadiator + '\'' +
+                '}';
+    }
+
     public String getModel() {
         return model;
     }

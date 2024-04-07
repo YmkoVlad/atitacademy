@@ -1,6 +1,6 @@
 package com.academy.intface;
 
-public interface InterfaceBus {
+public interface IBus {
 
     public void displayInfo();
 
