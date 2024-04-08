@@ -44,15 +44,12 @@ public class Engine {
         if (this == o) {
             return true;
         }
-        if ( o == null || getClass() != o.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Engine engine =(Engine) o;
-        return Objects.equals(model,engine.model)
-                && Objects.equals(typeEngine,engine.typeEngine)
-                && Objects.equals(power,engine.power);
+        Engine that = (Engine) o;
+        return model == that.model && typeEngine == that.typeEngine && power == that.power;
     }
-
 
 
     public String getModel() {

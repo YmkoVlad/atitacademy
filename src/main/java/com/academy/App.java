@@ -19,7 +19,9 @@ public class App
         Engine engine = new Engine("TestOne","electronic", 900, 550);
         Battery battery = new Battery(1400,9000, 900);
         Radiator radiator = new Radiator("Alumin", 300, 200, 4,"water");
-        Engine engine2 = new Engine("TestTwo", "petrol", 1100, 500);
+        Engine engine2 = new Engine("TestThre", "petrol", 1100, 500);
+        Engine engine3 = new Engine("TestOne","electronic", 900, 550);
+        Engine engine4 = new Engine("TestOne","electronic", 900, 1000);
 
         Car car = new Car("TeslaTest",
                 2,
@@ -57,6 +59,7 @@ public class App
                 12,
                 false);
 
+
         //проверка equals, HashCode, Enum
         System.out.println(car);
         System.out.println("equals car and car2 = " + car.equals(car2));
@@ -74,7 +77,10 @@ public class App
         System.out.println("HashCode Engine2 = " + engine2.hashCode());
         System.out.println("equals Engine and Engine2 = " + engine.equals(engine2));
 
-        System.out.println("equals Engine and Engine = " + engine.equals(engine));
+        System.out.println("equals Engine and Engine2 = " + engine.equals(engine2));
+        System.out.println("equals Engine and Engine3 = " + engine.equals(engine3));
+        System.out.println("equals Engine3 and Engine5 = " + engine3.equals(engine4));
+
 
 
 
