@@ -18,36 +18,25 @@ public class FileReadWrite {
 
         File task_nine ;
 
-        FileUtils.write(new File("task_nine.txt"), "Достоинством подобного способа выполнения программ является \n" +
-                "полная независимость байт-кода от операционной системы и оборудования, \n" +
-                "что позволяет выполнять Java-приложения на любом устройстве, \n" +
-                "для которого существует соответствующая виртуальная машина. Другой \n" +
-                "важной особенностью технологии Java является гибкая система безопасности, \n" +
-                "в рамках которой исполнение программы полностью контролируется виртуальной машиной. \n" +
-                "Любые операции, которые превышают установленные полномочия программы (например, попытка \n" +
-                "несанкционированного доступа к данным или соединения с другим компьютером), \n" +
-                "вызывают немедленное прерывание. \n" +
-                "Часто к недостаткам концепции виртуальной машины относят снижение производительности. \n" +
-                "Ряд усовершенствований несколько увеличил скорость выполнения программ на Java:");
+        FileUtils.write(new File("task_nine.txt"), "один, ТЕСТ! бум тест БУМ. бум");
 
         String string1;
 
         string1 = FileUtils.readFileToString(new File("task_nine.txt"), StandardCharsets.UTF_8);
-        string1.replaceAll("[^a-zA-Z0-9]", " ");
-        String[] wordArrayLineTask = string1.split(" +");
+        String string2 = string1.toLowerCase().replaceAll("\\p{P}", " ");
+        System.out.println(string2);
+        String[] wordArrayLineTask = string2.split(" +");
         Map<String, Integer> map = new HashMap();
 
-        int temp = 0;
 
-        for (int i = 0; i < wordArrayLineTask.length; i++){
-            for (int j = 1; j < wordArrayLineTask.length; j++){
-                if (wordArrayLineTask[i].equals(wordArrayLineTask[j])){
-                    map.put(wordArrayLineTask[i],temp++);
-                } else {
-                    map.put(wordArrayLineTask[i],temp);
-                }
+        int a = 1;
+
+        for (String word : wordArrayLineTask){
+            if (map.containsKey(word)) {
+                map.put(word, map.get(word) + 1);
+            } else {
+                map.put(word, a);
             }
-            temp = 0;
         }
 
         System.out.println(map.toString());
